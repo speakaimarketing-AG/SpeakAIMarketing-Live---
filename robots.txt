@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://speaking.marketing/sitemap.xml
+Sitemap: https://speakaimarketing.com/sitemap.xml
