@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NC2PBWLD');</script>
+<!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Plan — Speak.AI Marketing</title>
+    <meta name="description" content="Not sure which marketing approach is right for your business? Answer 5 quick questions and we'll recommend the plan that fits where you are today.">
+
+    <!-- SEO & Indexing -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://speakaimarketing.com/find-your-plan">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Find Your Plan &#8212; Speak.AI Marketing">
+    <meta property="og:description" content="Not sure which marketing approach is right for your business? Answer 5 quick questions and we'll recommend the plan that fits.">
+    <meta property="og:url" content="https://speakaimarketing.com/find-your-plan">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Speak.AI Marketing">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Find Your Plan &#8212; Speak.AI Marketing">
+    <meta name="twitter:description" content="Not sure which marketing approach is right for your business? Answer 5 quick questions and we'll recommend the plan that fits.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4F3RYLTKRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4F3RYLTKRL');
+    </script>
+
+    <style>
+        /* ============================================
+           FIND YOUR PLAN — Page-specific styles
+           ============================================ */
+
+        /* --- Consultation Wrapper --- */
+        .fyp-section {
+            padding: 5rem 0 7rem;
+        }
+        .fyp-wrapper {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* --- Progress Bar --- */
+        .fyp-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .fyp-progress__bar {
+            flex: 1;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .fyp-progress__fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fyp-progress__label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        /* --- Step Panel --- */
+        .fyp-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fyp-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes fyp-in {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fyp-panel__question {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .fyp-panel__hint {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* --- Option Cards --- */
+        .fyp-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .fyp-options--grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        .fyp-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+            font-family: inherit;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            width: 100%;
+            position: relative;
+        }
+        .fyp-option:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            transform: translateX(4px);
+        }
+        .fyp-option--selected {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+        .fyp-option--selected .fyp-option__check {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .fyp-option__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+        .fyp-option--selected .fyp-option__icon {
+            background: var(--accent);
+            color: #fff;
+        }
+        .fyp-option__text {
+            flex: 1;
+        }
+        .fyp-option__label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.1rem;
+        }
+        .fyp-option--selected .fyp-option__label {
+            color: var(--accent);
+        }
+        .fyp-option__sublabel {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .fyp-option__check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.25s ease;
+        }
+
+        /* --- Textarea --- */
+        .fyp-textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            min-height: 140px;
+            resize: vertical;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            outline: none;
+            margin-bottom: 2.5rem;
+        }
+        .fyp-textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+
+        /* --- Lead Form Fields --- */
+        .fyp-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .fyp-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .fyp-field--full {
+            grid-column: 1 / -1;
+        }
+        .fyp-field__label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .fyp-field__helper {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .fyp-field__optional {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-left: 0.4rem;
+        }
+        .fyp-input {
+            padding: 0.85rem 1.1rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.93rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            outline: none;
+            width: 100%;
+        }
+        .fyp-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+        .fyp-input--error {
+            border-color: #EF4444;
+        }
+        .fyp-input--valid {
+            border-color: #10B981;
+        }
+        .fyp-field__error {
+            font-size: 0.8rem;
+            color: #EF4444;
+            display: none;
+        }
+        .fyp-field__error--visible {
+            display: block;
+        }
+
+        /* --- Navigation Buttons --- */
+        .fyp-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .fyp-nav--right {
+            justify-content: flex-end;
+        }
+        .fyp-btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+        .fyp-btn-back:hover {
+            color: var(--text-primary);
+            border-color: var(--accent);
+        }
+
+        /* --- Recommendation Screen --- */
+        .fyp-result {
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fyp-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+        }
+        .fyp-result__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+        }
+        .fyp-result__plan-name {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .fyp-result__price {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .fyp-result__tagline {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+        .fyp-why {
+            background: var(--bg-secondary);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .fyp-why__title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+        }
+        .fyp-why__list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+        .fyp-why__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .fyp-why__item i {
+            color: #10B981;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .fyp-ai-note {
+            background: var(--accent-light);
+            border: 1px solid rgba(108, 60, 233, 0.2);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+        .fyp-ai-note i {
+            color: var(--accent);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .fyp-ai-note p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .fyp-ai-note strong {
+            color: var(--text-primary);
+        }
+
+        /* --- All Plans Grid --- */
+        .fyp-all-plans {
+            margin-top: 3rem;
+        }
+        .fyp-all-plans__title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+        .fyp-plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .fyp-plan-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            display: block;
+        }
+        .fyp-plan-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .fyp-plan-card--recommended {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-glow);
+        }
+        .fyp-plan-card__rec-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            background: var(--gradient-primary);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+        }
+        .fyp-plan-card__name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+        }
+        .fyp-plan-card__price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            font-family: 'Syne', sans-serif;
+            color: var(--accent);
+            margin-bottom: 0.35rem;
+        }
+        .fyp-plan-card__desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .fyp-plan-card__website-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .fyp-plan-card__cta {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent);
+            transition: gap 0.25s ease;
+        }
+        .fyp-plan-card:hover .fyp-plan-card__cta {
+            gap: 0.7rem;
+        }
+
+        /* --- Hero minimal --- */
+        .fyp-hero {
+            padding: 8rem 0 3rem;
+            text-align: center;
+        }
+        .fyp-hero__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 1.5rem;
+        }
+        .fyp-hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+            margin-bottom: 1.25rem;
+        }
+        .fyp-hero__sub {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 0.75rem;
+            line-height: 1.7;
+        }
+        .fyp-hero__detail {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .fyp-hero__reassurance {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .fyp-panel { padding: 1.75rem; }
+            .fyp-options--grid { grid-template-columns: 1fr; }
+            .fyp-form-grid { grid-template-columns: 1fr; }
+            .fyp-plans-grid { grid-template-columns: 1fr; }
+            .fyp-hero { padding: 6rem 0 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC2PBWLD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="/" class="nav__brand">Speak<span class="ai-effect">.AI</span> Marketing</a>
+            <div class="nav__links" id="navLinks">
+                <a href="/" class="nav__link">Home</a>
+                <a href="/services" class="nav__link">Services</a>
+                <a href="/pricing" class="nav__link">Pricing</a>
+                <a href="/find-your-plan" class="nav__link nav__link--active">Find Your Plan</a>
+                <a href="/about" class="nav__link">About</a>
+                <a href="/contact" class="nav__link">Contact</a>
+            </div>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="ph-duotone ph-sun theme-toggle__icon theme-toggle__icon--light"></i>
+                    <i class="ph-duotone ph-moon theme-toggle__icon theme-toggle__icon--dark"></i>
+                </button>
+                <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+                    <span></span><span></span><span>
+                </span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="fyp-hero">
+        <div class="container">
+            <div id="heroBlock">
+                <div class="fyp-hero__eyebrow">
+                    <i class="ph-duotone ph-compass"></i> Personalised Guidance
+                </div>
+                <h1>Find Your Plan.<br><span class="gradient-text gradient-text-animated">Powered by AI.</span></h1>
+                <p class="fyp-hero__sub">Not sure which marketing approach makes sense for your business? Let's figure it out together.</p>
+                <p class="fyp-hero__detail">Tell us what you're trying to achieve, what's already working, and where you're facing challenges. We'll use your answers to recommend the plan that makes the most sense for where you are today.</p>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                    <button class="btn btn--primary btn--large" id="startBtn" onclick="FYP.start()">
+                        Find My Plan <i class="ph-duotone ph-arrow-right"></i>
+                    </button>
+                    <span class="fyp-hero__reassurance">
+                        <i class="ph-duotone ph-clock"></i> Takes about 2 minutes &nbsp;·&nbsp;
+                        <i class="ph-duotone ph-lock-simple"></i> No payment required
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONSULTATION FLOW ==================== -->
+    <section class="fyp-section" id="consultSection" style="display:none; padding-top: 2rem;">
+        <div class="container">
+            <div class="fyp-wrapper">
+                <!-- Progress -->
+                <div class="fyp-progress" id="progressBar" style="display:none;">
+                    <div class="fyp-progress__bar">
+                        <div class="fyp-progress__fill" id="progressFill" style="width:0%"></div>
+                    </div>
+                    <span class="fyp-progress__label" id="progressLabel">Step 1 of 5</span>
+                </div>
+
+                <!-- Dynamic step container -->
+                <div id="stepContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">Speak<span class="ai-effect">.AI</span> Marketing</a>
+                    <p class="footer__tagline">AI-Powered Marketing for the Modern Era. We blend human strategy with AI computation.</p>
+                    <div class="footer__socials">
+                        <a href="https://www.linkedin.com/company/speak-ai-marketing" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph-duotone ph-linkedin-logo"></i></a>
+                        <a href="https://x.com/speakai_mrktng" target="_blank" rel="noopener" aria-label="X"><i class="ph-duotone ph-x-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Services</h4>
+                    <a href="/services/ai-seo">AI SEO</a>
+                    <a href="/services/ai-content">AI Content</a>
+                    <a href="/services/ai-social">AI Social Media</a>
+                    <a href="/services/ai-ppc">AI PPC</a>
+                    <a href="/services/ai-email">AI Email</a>
+                    <a href="/services/ai-analytics">AI Analytics</a>
+                    <a href="/services/web-development">Web Development</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Company</h4>
+                    <a href="/about">About Us</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/find-your-plan">Find Your Plan</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/privacy">Privacy Policy</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Get in Touch</h4>
+                    <p><i class="ph-duotone ph-envelope"></i> hello@speakaimarketing.com</p>
+                    <p><i class="ph-duotone ph-map-pin"></i> Pan-India and International</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Speak.AI Marketing — All rights reserved.<br><span style="font-size: 0.6rem; letter-spacing: 2px; opacity: 0.3; display: block; margin-top: 10px;">.- ...-</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+    <script>
+    /* ============================================================
+       FIND YOUR PLAN — Consultation Engine
+       ============================================================
+       ARCHITECTURE:
+         - FYP_CONFIG  : All question data (separate from UI)
+         - FYP_RULES   : Recommendation logic (separate from UI)
+         - FYP          : UI controller (render + navigate)
+       ============================================================ */
+
+    /* ---- DATA: Questions & Options ---- */
+    var FYP_CONFIG = {
+        questions: [
+            {
+                id: 'q1',
+                question: 'What are you trying to improve right now?',
+                hint: null,
+                type: 'single',
+                options: [
+                    { value: 'visibility',   icon: 'ph-eye',             label: 'Get more visibility',          sub: 'Show up more on Google and local search' },
+                    { value: 'traffic',      icon: 'ph-trend-up',        label: 'Generate more traffic & leads', sub: 'More people finding and contacting you' },
+                    { value: 'conversions',  icon: 'ph-funnel',          label: 'Improve conversions',          sub: 'Turn more visitors into customers' },
+                    { value: 'local',        icon: 'ph-map-pin',         label: 'Improve my local presence',    sub: 'Google Maps, local reviews and GBP' },
+                    { value: 'paid',         icon: 'ph-currency-inr',    label: 'Improve paid advertising',     sub: 'Google Ads or social media ads' },
+                    { value: 'together',     icon: 'ph-intersect',       label: 'Bring my marketing together',  sub: 'Everything feels scattered right now' },
+                    { value: 'unsure',       icon: 'ph-question',        label: "I'm not sure yet",             sub: "I'd like some guidance on where to start" }
+                ]
+            },
+            {
+                id: 'q2',
+                question: "What's already working in your marketing?",
+                hint: 'Select everything you are currently using or investing in.',
+                type: 'multi',
+                options: [
+                    { value: 'seo',          icon: 'ph-magnifying-glass', label: 'SEO',               sub: null },
+                    { value: 'google-ads',   icon: 'ph-google-logo',      label: 'Google Ads',        sub: null },
+                    { value: 'paid-social',  icon: 'ph-meta-logo',        label: 'Paid Social',       sub: null },
+                    { value: 'social',       icon: 'ph-instagram-logo',   label: 'Social Media',      sub: null },
+                    { value: 'content',      icon: 'ph-article',          label: 'Content Marketing', sub: null },
+                    { value: 'email',        icon: 'ph-envelope',         label: 'Email Marketing',   sub: null },
+                    { value: 'website-opt',  icon: 'ph-browser',          label: 'Website Optimisation', sub: null },
+                    { value: 'agency',       icon: 'ph-buildings',        label: 'Another agency',    sub: null },
+                    { value: 'in-house',     icon: 'ph-user',             label: 'In-house marketing',sub: null },
+                    { value: 'nothing',      icon: 'ph-x-circle',         label: 'Nothing consistently', sub: null }
+                ]
+            },
+            {
+                id: 'q3',
+                question: "What's getting in the way of better results?",
+                hint: 'Select all that apply.',
+                type: 'multi',
+                options: [
+                    { value: 'no-traffic',      icon: 'ph-arrow-down',      label: 'Not enough traffic',             sub: null },
+                    { value: 'no-leads',        icon: 'ph-user-minus',      label: 'Traffic but not enough leads',   sub: null },
+                    { value: 'no-convert',      icon: 'ph-funnel',          label: "Leads aren't converting",        sub: null },
+                    { value: 'scattered',       icon: 'ph-shuffle',         label: 'Marketing feels scattered',      sub: null },
+                    { value: 'measure',         icon: 'ph-chart-bar',       label: 'Results are difficult to measure',sub: null },
+                    { value: 'cost',            icon: 'ph-currency-inr',    label: 'Marketing costs are too high',   sub: null },
+                    { value: 'unsure-working',  icon: 'ph-question',        label: "We're not sure what's working",  sub: null },
+                    { value: 'dont-know',       icon: 'ph-map-trifold',     label: "We don't know where to start",   sub: null }
+                ]
+            },
+            {
+                id: 'q4',
+                question: 'How much support do you need?',
+                hint: 'This helps us match you to the right level of service.',
+                type: 'single',
+                options: [
+                    { value: 'focus',    icon: 'ph-crosshair', label: 'One Clear Priority',          sub: 'I need help solving a specific marketing problem.' },
+                    { value: 'growth',   icon: 'ph-rocket',    label: 'Growth Across Channels',       sub: 'I need multiple marketing channels working together.' },
+                    { value: 'system',   icon: 'ph-gear',      label: 'A Connected Marketing System', sub: 'I want someone to manage and optimise the bigger picture.' },
+                    { value: 'unsure',   icon: 'ph-compass',   label: "I'm Not Sure Yet",             sub: 'Help me figure out what makes sense.' }
+                ]
+            },
+            {
+                id: 'q5',
+                question: "Is there anything else you'd like us to know?",
+                hint: "Tell us what's happening with your marketing, what you've tried, or what you'd like to achieve. We'll use this to make your recommendation more relevant.",
+                type: 'text',
+                optional: true
+            }
+        ]
+    };
+
+    /* ---- RULES: Recommendation Logic ---- */
+    var FYP_RULES = {
+
+        /* Evaluate answers and return 'focus', 'traffic', or 'growth' */
+        recommend: function(answers) {
+            var q1 = answers.q1 || '';
+            var q2 = answers.q2 || [];
+            var q3 = answers.q3 || [];
+            var q4 = answers.q4 || '';
+
+            // Hard rules — Q4 support level is the strongest signal
+            if (q4 === 'focus') return 'focus';
+            if (q4 === 'system') return 'growth';
+
+            // Q4 unsure with no existing marketing → start with Focus
+            if (q4 === 'unsure' && (q2.indexOf('nothing') !== -1 || q2.length === 0)) return 'focus';
+
+            // Q1 primary goal signals
+            if (q1 === 'together') return 'growth';
+            if (q1 === 'unsure' && q2.indexOf('nothing') !== -1) return 'focus';
+
+            // Q3 scattered/hard to measure → needs system
+            var systemSignals = ['scattered', 'measure', 'unsure-working'].filter(function(v){ return q3.indexOf(v) !== -1; });
+            if (systemSignals.length >= 2 && q4 === 'growth') return 'growth';
+
+            // Q4 growth + multiple existing channels → Traffic Accelerator
+            if (q4 === 'growth') return 'traffic';
+
+            // Default by Q1
+            if (q1 === 'visibility' || q1 === 'traffic' || q1 === 'local' || q1 === 'paid') return 'traffic';
+            if (q1 === 'conversions') return 'traffic';
+
+            // Final fallback
+            return 'traffic';
+        },
+
+        /* Generate personalised "Why this fits" reasons */
+        reasons: function(answers, plan) {
+            var q1 = answers.q1 || '';
+            var q2 = answers.q2 || [];
+            var q3 = answers.q3 || [];
+            var q4 = answers.q4 || '';
+            var reasons = [];
+
+            var q1Labels = {
+                visibility: 'increasing local visibility',
+                traffic: 'generating more traffic and leads',
+                conversions: 'improving conversion rates',
+                local: 'strengthening your local presence',
+                paid: 'improving paid advertising performance',
+                together: 'bringing your marketing together',
+                unsure: 'finding the right starting point'
+            };
+
+            if (q1 && q1Labels[q1]) {
+                reasons.push('Your primary goal is ' + q1Labels[q1]);
+            }
+
+            if (q2.indexOf('nothing') !== -1) {
+                reasons.push('You are starting without existing marketing in place — a focused foundation is the right first step');
+            } else if (q2.length >= 3) {
+                reasons.push('You already have marketing activity across multiple channels that needs connecting');
+            } else if (q2.length >= 1 && q2.indexOf('nothing') === -1) {
+                reasons.push('You have some existing marketing activity that can be built on and accelerated');
+            }
+
+            if (q3.indexOf('scattered') !== -1 || q3.indexOf('measure') !== -1) {
+                reasons.push('Your current challenge involves making sense of scattered marketing efforts and measuring what works');
+            } else if (q3.indexOf('no-traffic') !== -1 || q3.indexOf('no-leads') !== -1) {
+                reasons.push('Your current bottleneck is in the acquisition phase — getting more of the right people to find and contact you');
+            } else if (q3.indexOf('no-convert') !== -1) {
+                reasons.push('You are getting visitors but not converting them — this plan addresses both traffic and conversion improvements');
+            }
+
+            var supportLabels = {
+                focus: 'a single, focused service priority',
+                growth: 'support across multiple marketing channels',
+                system: 'a fully managed, connected marketing system',
+                unsure: 'clear guidance on where to start'
+            };
+            if (q4 && supportLabels[q4]) {
+                reasons.push('You need ' + supportLabels[q4]);
+            }
+
+            // Trim to max 4
+            return reasons.slice(0, 4);
+        }
+    };
+
+    /* ---- PLANS: Display Data ---- */
+    var FYP_PLANS = {
+        focus: {
+            name: 'Focus',
+            price: '₹14,900/month',
+            tagline: 'One clear marketing priority, executed well.',
+            desc: 'For businesses with one clear marketing priority.',
+            ctaText: 'Discuss My Marketing Priority',
+            ctaUrl: '/contact?plan=focus',
+            eventName: 'plan_recommended_focus',
+            websiteBadge: null
+        },
+        traffic: {
+            name: 'Traffic Accelerator',
+            price: '₹29,900/month',
+            tagline: 'More visibility, more traffic, more leads.',
+            desc: 'For businesses ready to accelerate visibility, traffic and lead generation.',
+            ctaText: 'Build My Growth Plan',
+            ctaUrl: '/contact?plan=traffic-accelerator',
+            eventName: 'plan_recommended_traffic',
+            websiteBadge: { label: 'Conversion-Ready Website', sub: 'Up to 6 core pages — part of your marketing system' }
+        },
+        growth: {
+            name: 'Growth System',
+            price: '₹49,900/month',
+            tagline: 'All your marketing channels, working as one.',
+            desc: 'For businesses that need multiple marketing channels managed as one connected growth system.',
+            ctaText: 'Build My Marketing System',
+            ctaUrl: '/contact?plan=growth-system',
+            eventName: 'plan_recommended_growth',
+            websiteBadge: { label: 'Growth Website', sub: 'Up to 10 core pages — part of your marketing system' }
+        }
+    };
+
+    /* ---- UI Controller ---- */
+    var FYP = (function() {
+        var _answers = {};
+        var _currentStep = 0; // 0 = not started, 1-5 = questions, 6 = lead form, 7 = result
+        var _totalSteps = 5;
+        var _recommendation = null;
+        var _heroBlock = document.getElementById('heroBlock');
+        var _consultSection = document.getElementById('consultSection');
+        var _progressBar = document.getElementById('progressBar');
+        var _progressFill = document.getElementById('progressFill');
+        var _progressLabel = document.getElementById('progressLabel');
+        var _container = document.getElementById('stepContainer');
+
+        function _track(event, params) {
+            try {
+                if (window.gtag) {
+                    gtag('event', event, params || {});
+                }
+                if (window.dataLayer) {
+                    dataLayer.push({ event: event });
+                }
+            } catch(e) {}
+        }
+
+        function _scrollToConsult() {
+            _consultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function start() {
+            _heroBlock.style.display = 'none';
+            _consultSection.style.display = 'block';
+            _progressBar.style.display = 'flex';
+            _currentStep = 1;
+            _track('find_plan_started');
+            _renderQuestion();
+        }
+
+        function _updateProgress() {
+            if (_currentStep >= 1 && _currentStep <= _totalSteps) {
+                var pct = ((_currentStep - 1) / _totalSteps) * 100;
+                _progressFill.style.width = pct + '%';
+                _progressLabel.textContent = 'Step ' + _currentStep + ' of ' + _totalSteps;
+            } else if (_currentStep === 6) {
+                _progressFill.style.width = '95%';
+                _progressLabel.textContent = 'Almost there';
+            } else if (_currentStep === 7) {
+                _progressFill.style.width = '100%';
+                _progressLabel.textContent = 'Your recommendation';
+            }
+        }
+
+        function _renderQuestion() {
+            _updateProgress();
+            var q = FYP_CONFIG.questions[_currentStep - 1];
+            _scrollToConsult();
+
+            var backBtn = _currentStep > 1
+                ? '<button class="fyp-btn-back" onclick="FYP.back()"><i class="ph-duotone ph-arrow-left"></i> Back</button>'
+                : '<span></span>';
+
+            var optionsHtml = '';
+            if (q.type === 'single' || q.type === 'multi') {
+                var isGrid = q.options.length > 5 && q.type === 'multi';
+                var gridClass = isGrid ? 'fyp-options fyp-options--grid' : 'fyp-options';
+                optionsHtml = '<div class="' + gridClass + '" id="optionsContainer">';
+                q.options.forEach(function(opt) {
+                    var isSelected = q.type === 'single'
+                        ? (_answers[q.id] === opt.value)
+                        : ((_answers[q.id] || []).indexOf(opt.value) !== -1);
+                    var selClass = isSelected ? ' fyp-option--selected' : '';
+                    var checkHtml = isSelected ? '<div class="fyp-option__check"><i class="ph-bold ph-check"></i></div>' : '<div class="fyp-option__check"><i class="ph-bold ph-check"></i></div>';
+                    var subHtml = opt.sub ? '<span class="fyp-option__sublabel">' + opt.sub + '</span>' : '';
+                    optionsHtml += '<button class="fyp-option' + selClass + '" data-value="' + opt.value + '" onclick="FYP.selectOption(this, \'' + q.type + '\', \'' + q.id + '\')">'
+                        + '<div class="fyp-option__icon"><i class="ph-duotone ' + opt.icon + '"></i></div>'
+                        + '<div class="fyp-option__text"><span class="fyp-option__label">' + opt.label + '</span>' + subHtml + '</div>'
+                        + checkHtml
+                        + '</button>';
+                });
+                optionsHtml += '</div>';
+            } else if (q.type === 'text') {
+                var savedText = _answers[q.id] || '';
+                optionsHtml = '<textarea class="fyp-textarea" id="q5textarea" placeholder="For example, we\'ve been running Google Ads but aren\'t getting enough enquiries...">' + savedText + '</textarea>';
+            }
+
+            var continueLabel = _currentStep < _totalSteps ? 'Continue <i class="ph-duotone ph-arrow-right"></i>' : 'Continue <i class="ph-duotone ph-arrow-right"></i>';
+            var skipHtml = q.optional ? ' <button class="fyp-btn-back" onclick="FYP.skip()" style="border:none; background:none; color:var(--text-muted); font-size:0.85rem; cursor:pointer;">Skip this question</button>' : '';
+
+            _container.innerHTML = '<div class="fyp-panel">'
+                + '<h2 class="fyp-panel__question">' + q.question + '</h2>'
+                + (q.hint ? '<p class="fyp-panel__hint">' + q.hint + '</p>' : '')
+                + optionsHtml
+                + '<div class="fyp-nav">'
+                + backBtn
+                + '<div style="display:flex; align-items:center; gap:1rem;">'
+                + skipHtml
+                + '<button class="btn btn--primary" id="continueBtn" onclick="FYP.next()">' + continueLabel + '</button>'
+                + '</div></div>'
+                + '</div>';
+
+            _updateContinueBtn(q);
+        }
+
+        function _updateContinueBtn(q) {
+            var btn = document.getElementById('continueBtn');
+            if (!btn) return;
+            var hasAnswer = false;
+            if (q.type === 'single') hasAnswer = !!_answers[q.id];
+            else if (q.type === 'multi') hasAnswer = (_answers[q.id] || []).length > 0;
+            else if (q.type === 'text') hasAnswer = true; // optional
+            btn.disabled = !hasAnswer;
+            btn.style.opacity = hasAnswer ? '1' : '0.45';
+        }
+
+        function selectOption(el, type, qId) {
+            if (type === 'single') {
+                _answers[qId] = el.getAttribute('data-value');
+                document.querySelectorAll('#optionsContainer .fyp-option').forEach(function(b) {
+                    b.classList.remove('fyp-option--selected');
+                    var check = b.querySelector('.fyp-option__check');
+                    if(check) { check.style.opacity='0'; check.style.transform='scale(0.5)'; }
+                    var icon = b.querySelector('.fyp-option__icon');
+                    if(icon) icon.style.background='';
+                    var lbl = b.querySelector('.fyp-option__label');
+                    if(lbl) lbl.style.color='';
+                });
+                el.classList.add('fyp-option--selected');
+                var check = el.querySelector('.fyp-option__check');
+                if(check) { check.style.opacity='1'; check.style.transform='scale(1)'; }
+                // Auto-advance single select after short delay
+                setTimeout(function(){ FYP.next(); }, 350);
+            } else {
+                // multi
+                if (!_answers[qId]) _answers[qId] = [];
+                var val = el.getAttribute('data-value');
+                var idx = _answers[qId].indexOf(val);
+                if (idx === -1) {
+                    // Deselect "nothing" if selecting others
+                    if (val !== 'nothing') {
+                        var nothingIdx = _answers[qId].indexOf('nothing');
+                        if (nothingIdx !== -1) {
+                            _answers[qId].splice(nothingIdx, 1);
+                            var nothingBtn = document.querySelector('#optionsContainer .fyp-option[data-value="nothing"]');
+                            if (nothingBtn) {
+                                nothingBtn.classList.remove('fyp-option--selected');
+                                var nc = nothingBtn.querySelector('.fyp-option__check');
+                                if(nc){ nc.style.opacity='0'; nc.style.transform='scale(0.5)'; }
+                            }
+                        }
+                    } else {
+                        // Selecting "nothing" deselects all others
+                        _answers[qId] = ['nothing'];
+                        document.querySelectorAll('#optionsContainer .fyp-option').forEach(function(b) {
+                            b.classList.remove('fyp-option--selected');
+                            var c = b.querySelector('.fyp-option__check');
+                            if(c){c.style.opacity='0'; c.style.transform='scale(0.5)';}
+                        });
+                        el.classList.add('fyp-option--selected');
+                        var cc = el.querySelector('.fyp-option__check');
+                        if(cc){cc.style.opacity='1'; cc.style.transform='scale(1)';}
+                        _updateContinueBtn(FYP_CONFIG.questions[_currentStep - 1]);
+                        return;
+                    }
+                    _answers[qId].push(val);
+                    el.classList.add('fyp-option--selected');
+                    var c2 = el.querySelector('.fyp-option__check');
+                    if(c2){c2.style.opacity='1'; c2.style.transform='scale(1)';}
+                } else {
+                    _answers[qId].splice(idx, 1);
+                    el.classList.remove('fyp-option--selected');
+                    var c3 = el.querySelector('.fyp-option__check');
+                    if(c3){c3.style.opacity='0'; c3.style.transform='scale(0.5)';}
+                }
+                _updateContinueBtn(FYP_CONFIG.questions[_currentStep - 1]);
+            }
+            _updateContinueBtn(FYP_CONFIG.questions[_currentStep - 1]);
+        }
+
+        function next() {
+            var q = FYP_CONFIG.questions[_currentStep - 1];
+            // Save textarea value if on q5
+            if (q && q.type === 'text') {
+                var ta = document.getElementById('q5textarea');
+                _answers[q.id] = ta ? ta.value.trim() : '';
+            }
+            _track('find_plan_q' + _currentStep);
+
+            if (_currentStep < _totalSteps) {
+                _currentStep++;
+                _renderQuestion();
+            } else {
+                // Go to lead form
+                _currentStep = 6;
+                _renderLeadForm();
+            }
+        }
+
+        function skip() {
+            _answers[FYP_CONFIG.questions[_currentStep - 1].id] = '';
+            next();
+        }
+
+        function back() {
+            if (_currentStep === 6) {
+                _currentStep = _totalSteps;
+                _renderQuestion();
+            } else if (_currentStep > 1) {
+                _currentStep--;
+                _renderQuestion();
+            }
+        }
+
+        function _renderLeadForm() {
+            _updateProgress();
+            _scrollToConsult();
+            _track('find_plan_contact_started');
+
+            _container.innerHTML = '<div class="fyp-panel fyp-result">'
+                + '<h2 class="fyp-panel__question">Almost there.</h2>'
+                + '<p class="fyp-panel__hint" style="margin-bottom:2rem;">We\'ll use your details to prepare your personalised plan recommendation.</p>'
+                + '<form id="fypLeadForm" onsubmit="FYP.submit(event)" novalidate>'
+                + '<div class="fyp-form-grid">'
+
+                + '<div class="fyp-field">'
+                + '<label class="fyp-field__label" for="fyp_name">Your Name <span aria-hidden="true" style="color:#EF4444">*</span></label>'
+                + '<input class="fyp-input" type="text" id="fyp_name" name="name" autocomplete="name" placeholder="e.g. Rahul Sharma" required aria-describedby="fyp_name_err">'
+                + '<span class="fyp-field__helper">How should we address you?</span>'
+                + '<span class="fyp-field__error" id="fyp_name_err" role="alert">Please enter your name.</span>'
+                + '</div>'
+
+                + '<div class="fyp-field">'
+                + '<label class="fyp-field__label" for="fyp_email">Work Email <span aria-hidden="true" style="color:#EF4444">*</span></label>'
+                + '<input class="fyp-input" type="email" id="fyp_email" name="email" autocomplete="email" placeholder="you@yourbusiness.com" required aria-describedby="fyp_email_err">'
+                + '<span class="fyp-field__helper">Where can we send your recommendation?</span>'
+                + '<span class="fyp-field__error" id="fyp_email_err" role="alert">Please enter a valid email address.</span>'
+                + '</div>'
+
+                + '<div class="fyp-field">'
+                + '<label class="fyp-field__label" for="fyp_website">Website <span class="fyp-field__optional">(optional)</span></label>'
+                + '<input class="fyp-input" type="url" id="fyp_website" name="website" autocomplete="url" placeholder="https://yourwebsite.com" aria-describedby="fyp_website_err">'
+                + '<span class="fyp-field__helper">If you have one, we\'ll use it to understand your setup.</span>'
+                + '<span class="fyp-field__error" id="fyp_website_err" role="alert">Please enter a valid URL starting with http:// or https://</span>'
+                + '</div>'
+
+                + '<div class="fyp-field">'
+                + '<label class="fyp-field__label" for="fyp_company">Company / Brand <span class="fyp-field__optional">(optional)</span></label>'
+                + '<input class="fyp-input" type="text" id="fyp_company" name="company" autocomplete="organization" placeholder="Your Business Name">'
+                + '<span class="fyp-field__helper">Helps us put your recommendation in context.</span>'
+                + '</div>'
+
+                + '</div>'
+                + '<div id="fypSubmitError" style="color:#EF4444; font-size:0.9rem; margin-bottom:1rem; display:none;"></div>'
+                + '<div class="fyp-nav">'
+                + '<button type="button" class="fyp-btn-back" onclick="FYP.back()"><i class="ph-duotone ph-arrow-left"></i> Back</button>'
+                + '<button type="submit" class="btn btn--primary btn--large" id="fypSubmitBtn">Show My Plan <i class="ph-duotone ph-arrow-right"></i></button>'
+                + '</div>'
+                + '</form>'
+                + '</div>';
+
+            // Live validation
+            var nameIn = document.getElementById('fyp_name');
+            var emailIn = document.getElementById('fyp_email');
+            var webIn = document.getElementById('fyp_website');
+            [nameIn, emailIn, webIn].forEach(function(inp) {
+                if (!inp) return;
+                inp.addEventListener('blur', function() { _validateField(inp); });
+                inp.addEventListener('input', function() {
+                    if (inp.classList.contains('fyp-input--error')) _validateField(inp);
+                });
+            });
+        }
+
+        function _validateField(inp) {
+            var id = inp.id;
+            var val = inp.value.trim();
+            var errEl = document.getElementById(id + '_err');
+            var ok = true;
+
+            if (id === 'fyp_name') {
+                ok = val.length >= 2;
+            } else if (id === 'fyp_email') {
+                ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+            } else if (id === 'fyp_website') {
+                ok = val === '' || /^https?:\/\/.+/.test(val);
+            }
+
+            inp.classList.toggle('fyp-input--error', !ok);
+            inp.classList.toggle('fyp-input--valid', ok && val.length > 0);
+            if (errEl) errEl.classList.toggle('fyp-field__error--visible', !ok && val.length > 0);
+            return ok;
+        }
+
+        function submit(e) {
+            e.preventDefault();
+            var nameIn = document.getElementById('fyp_name');
+            var emailIn = document.getElementById('fyp_email');
+            var webIn = document.getElementById('fyp_website');
+            var nameOk = _validateField(nameIn);
+            var emailOk = _validateField(emailIn);
+            var webOk = _validateField(webIn);
+
+            if (!nameOk || !emailOk || !webOk) {
+                var errDiv = document.getElementById('fypSubmitError');
+                if (errDiv) { errDiv.style.display='block'; errDiv.textContent='Please fix the highlighted fields before continuing.'; }
+                return;
+            }
+
+            var submitBtn = document.getElementById('fypSubmitBtn');
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Preparing your recommendation...'; }
+
+            // Compute recommendation
+            _recommendation = FYP_RULES.recommend(_answers);
+            var plan = FYP_PLANS[_recommendation];
+
+            // Build submission payload
+            var payload = new FormData();
+            payload.append('source', 'find-your-plan');
+            payload.append('name', nameIn.value.trim());
+            payload.append('email', emailIn.value.trim());
+            payload.append('website', webIn.value.trim());
+            payload.append('company', (document.getElementById('fyp_company') || {}).value || '');
+            payload.append('q1_goal', _answers.q1 || '');
+            payload.append('q2_working', (_answers.q2 || []).join(', '));
+            payload.append('q3_blockers', (_answers.q3 || []).join(', '));
+            payload.append('q4_support', _answers.q4 || '');
+            payload.append('q5_notes', _answers.q5 || '');
+            payload.append('recommended_plan', plan.name);
+            payload.append('timestamp', new Date().toISOString());
+
+            // Submit to Google Sheets
+            var GS_URL = 'https://script.google.com/macros/s/AKfycbzWjkfgAJcF3rp3sTuWpAGInGg9b80xmMTNc1isNfxF3-qXwL6gEc8ivJV9xCEjOZ4mdg/exec';
+            fetch(GS_URL, { method: 'POST', body: payload, mode: 'no-cors' })
+                .catch(function(){}) // no-cors always resolves — we always show result
+                .finally(function() {
+                    _track('find_plan_completed');
+                    _track(plan.eventName);
+                    _currentStep = 7;
+                    _renderResult(nameIn.value.trim());
+                });
+        }
+
+        function _renderResult(firstName) {
+            _updateProgress();
+            _scrollToConsult();
+            var plan = FYP_PLANS[_recommendation];
+            var reasons = FYP_RULES.reasons(_answers, _recommendation);
+            var greeting = firstName ? firstName.split(' ')[0] : '';
+
+            var reasonsHtml = reasons.map(function(r) {
+                return '<div class="fyp-why__item"><i class="ph-duotone ph-check-circle"></i><span>' + r + '</span></div>';
+            }).join('');
+
+            var websiteHtml = '';
+            if (plan.websiteBadge) {
+                websiteHtml = '<div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.4rem 0.9rem; background:var(--accent-light); border-radius:10px; margin-bottom:1.5rem;">'
+                    + '<i class="ph-duotone ph-globe" style="color:var(--accent);"></i>'
+                    + '<div><div style="font-size:0.85rem; font-weight:700; color:var(--accent);">' + plan.websiteBadge.label + '</div>'
+                    + '<div style="font-size:0.78rem; color:var(--text-muted);">' + plan.websiteBadge.sub + '</div></div>'
+                    + '</div>';
+            }
+
+            // All plans for explore section
+            var allPlansHtml = '';
+            ['focus','traffic','growth'].forEach(function(key) {
+                var p = FYP_PLANS[key];
+                var isRec = key === _recommendation;
+                var recBadge = isRec ? '<div class="fyp-plan-card__rec-badge">Recommended for you</div>' : '';
+                var wbHtml = p.websiteBadge ? '<div class="fyp-plan-card__website-badge"><i class="ph-duotone ph-globe"></i>' + p.websiteBadge.label + '</div>' : '';
+                var ctaUrl = isRec ? p.ctaUrl : p.ctaUrl;
+                allPlansHtml += '<a href="' + ctaUrl + '" class="fyp-plan-card' + (isRec ? ' fyp-plan-card--recommended' : '') + '" onclick="FYP.trackPlanSelect(\'' + key + '\')">'
+                    + recBadge
+                    + '<div class="fyp-plan-card__name">' + p.name + '</div>'
+                    + '<div class="fyp-plan-card__price">' + p.price + '</div>'
+                    + '<div class="fyp-plan-card__desc">' + p.desc + '</div>'
+                    + wbHtml
+                    + '<div class="fyp-plan-card__cta">Learn more <i class="ph-duotone ph-arrow-right"></i></div>'
+                    + '</a>';
+            });
+
+            _container.innerHTML = ''
+                + '<div class="fyp-result">'
+                + '<div class="fyp-panel" style="margin-bottom:1.5rem;">'
+                + '<div class="fyp-result__badge"><i class="ph-duotone ph-sparkle"></i> Your Plan Recommendation</div>'
+                + '<div class="fyp-result__plan-name">' + plan.name + '</div>'
+                + '<div class="fyp-result__price">' + plan.price + '</div>'
+                + '<p class="fyp-result__tagline">' + plan.tagline + '</p>'
+                + websiteHtml
+                + '<p style="font-size:0.95rem; color:var(--text-secondary); margin-bottom:2rem;">Based on what you\'ve told us, this is the plan that best matches your current marketing needs' + (greeting ? ', ' + greeting : '') + '.</p>'
+
+                + '<div class="fyp-why">'
+                + '<div class="fyp-why__title">Why this fits</div>'
+                + '<div class="fyp-why__list">' + reasonsHtml + '</div>'
+                + '</div>'
+
+                + '<div class="fyp-ai-note">'
+                + '<i class="ph-duotone ph-info"></i>'
+                + '<p><strong>Why our system recommended this:</strong> Your recommendation is based on your goals, current marketing activity, challenges and desired level of support. Your answers are matched against the scope of our three marketing plans to identify the closest fit. The selection is rule-based — no AI model makes an arbitrary business judgement on your behalf.</p>'
+                + '</div>'
+
+                + '<div style="display:flex; gap:1rem; flex-wrap:wrap;">'
+                + '<a href="' + plan.ctaUrl + '" class="btn btn--primary btn--large" onclick="FYP.trackContact()">' + plan.ctaText + ' <i class="ph-duotone ph-arrow-right"></i></a>'
+                + '<a href="/pricing" class="btn btn--outline" onclick="FYP.trackPricing()">View All Plans</a>'
+                + '</div>'
+                + '</div>'
+
+                + '<div class="fyp-all-plans">'
+                + '<div class="fyp-all-plans__title">Explore All Plans</div>'
+                + '<div class="fyp-plans-grid">' + allPlansHtml + '</div>'
+                + '</div>'
+                + '</div>';
+        }
+
+        function trackPlanSelect(key) {
+            var evtMap = { focus: 'plan_selected_focus', traffic: 'plan_selected_traffic', growth: 'plan_selected_growth' };
+            _track(evtMap[key] || 'plan_selected');
+        }
+        function trackContact() { _track('contact_clicked'); }
+        function trackPricing() { _track('pricing_viewed'); }
+
+        return { start: start, next: next, back: back, skip: skip, submit: submit, selectOption: selectOption, trackPlanSelect: trackPlanSelect, trackContact: trackContact, trackPricing: trackPricing };
+    })();
+    </script>
+
+</body>
+</html>
