@@ -615,7 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h1>Find Your Plan.<br><span class="gradient-text gradient-text-animated">Powered by AI.</span></h1>
                 <p class="fyp-hero__sub">Not sure which marketing approach makes sense for your business? Let's figure it out together.</p>
                 <p class="fyp-hero__detail">Tell us what you're trying to achieve, what's already working, and where you're facing challenges. We'll use your answers to recommend the plan that makes the most sense for where you are today.</p>
-                <div style="display:flex; flex-direction:column; align-items:center;">
+                <div style="display:flex; flex-direction:column; align-items:center; margin-bottom: 4rem;">
                     <button class="btn btn--primary btn--large" id="startBtn" onclick="FYP.start()">
                         Find My Plan <i class="ph-duotone ph-arrow-right"></i>
                     </button>
@@ -623,6 +623,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <i class="ph-duotone ph-clock"></i> Takes about 2 minutes &nbsp;·&nbsp;
                         <i class="ph-duotone ph-lock-simple"></i> No payment required
                     </span>
+                </div>
+
+                <!-- Section A: Quick Plan Summary Cards -->
+                <div style="margin-top: 3rem; text-align: left;">
+                    <h3 style="font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Which Marketing Approach Matches Your Needs?</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+                        <div class="glass-card" style="padding: 1.5rem; text-align: center; border-radius: 18px;">
+                            <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); color: var(--accent); font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;"><i class="ph-duotone ph-target"></i></div>
+                            <h4 style="font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 0.35rem;">Focus Plan</h4>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">₹14,900/mo</div>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">You have one clear priority — fix Local SEO, launch Google Ads, or get found on Google Maps.</p>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; text-align: center; border-radius: 18px; border-color: var(--accent);">
+                            <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--gradient-primary); color: #fff; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;"><i class="ph-duotone ph-rocket"></i></div>
+                            <h4 style="font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 0.35rem;">Traffic Accelerator</h4>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">₹29,900/mo · Free Website Included (Offer till New Year)</div>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">You need leads now via Ads + long-term visibility via SEO + a Conversion-Ready Website.</p>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; text-align: center; border-radius: 18px;">
+                            <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); color: var(--accent); font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;"><i class="ph-duotone ph-gear"></i></div>
+                            <h4 style="font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 0.35rem;">Growth System</h4>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">₹49,900/mo · Free Growth Site (Offer till New Year)</div>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">All channels managed together — SEO, Paid Search, Paid Social, Email and a Growth Website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section B: Educational Video Resource Cards -->
+                <div style="margin-top: 4rem; text-align: left;">
+                    <h3 style="font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem;">Need Help Understanding Marketing Options?</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-bottom: 2rem;">Watch these short guides to decide which channels make sense for your business today.</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+                        <!-- Video Card 1 -->
+                        <a href="https://www.youtube.com/watch?v=1SjQUW_2m8o" target="_blank" rel="noopener" class="glass-card" style="display: block; padding: 0; overflow: hidden; text-decoration: none; border-radius: 16px; transition: transform 0.3s ease;">
+                            <div style="position: relative; width: 100%; height: 140px; background: #000; overflow: hidden;">
+                                <img src="https://img.youtube.com/vi/1SjQUW_2m8o/hqdefault.jpg" alt="SEO Explainer Video" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"><i class="ph-bold ph-play"></i></div>
+                            </div>
+                            <div style="padding: 1.25rem;">
+                                <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 0.35rem;">SEO Basics</div>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4;">The ONLY Video You Need To Understand SEO</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Neil Patel explains how search engines rank local businesses.</p>
+                            </div>
+                        </a>
+
+                        <!-- Video Card 2 -->
+                        <a href="https://www.youtube.com/watch?v=W3bQp0L0j2k" target="_blank" rel="noopener" class="glass-card" style="display: block; padding: 0; overflow: hidden; text-decoration: none; border-radius: 16px; transition: transform 0.3s ease;">
+                            <div style="position: relative; width: 100%; height: 140px; background: #000; overflow: hidden;">
+                                <img src="https://img.youtube.com/vi/W3bQp0L0j2k/hqdefault.jpg" alt="SEO vs Google Ads Video" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"><i class="ph-bold ph-play"></i></div>
+                            </div>
+                            <div style="padding: 1.25rem;">
+                                <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 0.35rem;">SEO vs Paid Ads</div>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4;">Google Ads vs SEO: Which Delivers Faster ROI?</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">HubSpot guide comparing instant ad leads vs long-term organic growth.</p>
+                            </div>
+                        </a>
+
+                        <!-- Video Card 3 -->
+                        <a href="https://www.youtube.com/watch?v=8m9g_s1203s" target="_blank" rel="noopener" class="glass-card" style="display: block; padding: 0; overflow: hidden; text-decoration: none; border-radius: 16px; transition: transform 0.3s ease;">
+                            <div style="position: relative; width: 100%; height: 140px; background: #000; overflow: hidden;">
+                                <img src="https://img.youtube.com/vi/8m9g_s1203s/hqdefault.jpg" alt="Local Marketing Video" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"><i class="ph-bold ph-play"></i></div>
+                            </div>
+                            <div style="padding: 1.25rem;">
+                                <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 0.35rem;">Local Growth</div>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4;">Digital Marketing Strategy for Local Businesses</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Step-by-step roadmap for local service providers, clinics & stores.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Section C: Reassurance Contact Block -->
+                <div style="margin-top: 4rem; padding: 2rem; background: var(--accent-light); border: 1px solid rgba(108, 60, 233, 0.2); border-radius: 20px; text-align: center;">
+                    <h4 style="font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Prefer to talk to a marketing strategist directly?</h4>
+                    <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto 1.5rem;">If you have a complex setup or want personal advice before choosing a plan, our team is ready to help — no high-pressure sales pitch.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="/contact" class="btn btn--primary btn--large"><i class="ph-duotone ph-envelope-simple"></i> Contact Us</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -667,6 +750,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="/services/ai-email">AI Email</a>
                     <a href="/services/ai-analytics">AI Analytics</a>
                     <a href="/services/web-development">Web Development</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Packages</h4>
+                    <a href="/packages/focus">Focus</a>
+                    <a href="/packages/traffic-accelerator">Traffic Accelerator</a>
+                    <a href="/packages/growth-system">Growth System</a>
+                    <a href="/packages/website-launch">Website Launch</a>
+                    <a href="/packages/website-care">Website Care &amp; GBP</a>
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__heading">Company</h4>

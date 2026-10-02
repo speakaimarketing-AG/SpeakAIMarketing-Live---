@@ -53,9 +53,12 @@
 .nav__hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 @media (max-width: 768px) {
+    .nav__inner { padding: 0 1rem; }
+    .nav__brand { font-size: 1.15rem; white-space: nowrap; }
+    .nav__actions { gap: 0.5rem; }
     .nav__hamburger { display: flex; }
     .nav__links {
-        position: fixed; top: 70px; left: 0; right: 0;
+        position: fixed; top: 60px; left: 0; right: 0;
         background: var(--bg-primary); flex-direction: column;
         padding: 2rem; gap: 1.5rem;
         border-bottom: 1px solid var(--border-color);
@@ -102,12 +105,12 @@
 .hero__illustration { position: relative; z-index: 1; width: 80%; max-width: 420px; animation: float 6s ease-in-out infinite; }
 
 @media (max-width: 768px) {
-    .hero { min-height: auto; padding: 8rem 0 4rem; }
-    .hero--half { min-height: auto; }
-    .hero__float { height: 300px; margin-top: 2rem; }
-    .hero__orb--1 { width: 200px; height: 200px; }
-    .hero__orb--2 { width: 150px; height: 150px; }
-    .hero__orb--3 { width: 100px; height: 100px; }
+    .hero { min-height: auto; display: block; padding-top: 5.5rem; padding-bottom: 3rem; }
+    .hero--half { min-height: auto; padding-top: 5.5rem; }
+    .hero__float { height: 200px; margin-top: 1.5rem; transform: scale(0.85); }
+    .hero__orb--1 { width: 140px; height: 140px; opacity: 0.4; }
+    .hero__orb--2 { width: 100px; height: 100px; opacity: 0.3; }
+    .hero__orb--3 { width: 80px; height: 80px; opacity: 0.2; }
 }
 
 /* --- Glass Card --- */
@@ -178,7 +181,7 @@
 .pricing-card__feature { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
 .pricing-card__feature i { color: var(--accent); font-size: 1.1rem; flex-shrink: 0; }
 
-/* --- Feature Card (Service Pages) --- */
+/* --- Feature Card (Service & Package Pages) --- */
 .feature-card {
     background: var(--bg-card); border: 1px solid var(--border-color);
     border-radius: 20px; padding: 1.75rem; transition: all 0.4s ease;
@@ -188,6 +191,55 @@
 .feature-card:hover .feature-card__icon { transform: scale(1.2) rotate(-10deg); }
 .feature-card__title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
 .feature-card__desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* Enhanced High-Contrast Package Cards (Adapts to Light & Dark Theme) */
+.glass-card, .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+}
+.glass-card h3, .feature-card h3 {
+    color: var(--text-primary);
+}
+.glass-card p, .feature-card p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .glass-card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(16px);
+}
+[data-theme="dark"] .glass-card:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 12px 30px rgba(108, 60, 233, 0.25) !important;
+}
+
+[data-theme="light"] .glass-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .glass-card:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 10px 30px rgba(108, 60, 233, 0.12) !important;
+}
+
+/* Upscaled Hero H1 Headline (Guaranteed Largest Font on Entire Page) */
+.hero--half h1, .hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.035em !important;
+}
+
+/* Balanced Section Header H2 (Never overpowers Hero H1) */
+.section-header h2 {
+    font-size: clamp(1.75rem, 3.2vw, 2.4rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
 
 /* --- Marquee Banner --- */
 .marquee-section { overflow: hidden; }
@@ -365,7 +417,7 @@ label.toggle input[type="checkbox"]:checked + .toggle-slider::after { transform:
 
 /* --- Footer --- */
 .footer { background: var(--bg-secondary); padding: 4rem 0 2rem; margin-top: 0; border-top: 1px solid var(--border-color); }
-.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
 .footer__logo { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--text-primary); display: block; margin-bottom: 0.75rem; }
 .footer__tagline { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem; max-width: 280px; }
 .footer__socials { display: flex; gap: 0.75rem; }
@@ -480,4 +532,41 @@ label.toggle input[type="checkbox"]:checked + .toggle-slider::after { transform:
     filter: blur(8px);
     opacity: 0.6;
     z-index: -1;
+}
+
+/* --- Tech Brand Logos Showcase Grid --- */
+.tech-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+.tech-logo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    min-height: 70px;
+}
+.tech-logo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-glow);
+}
+@media (max-width: 768px) {
+    .tech-logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .tech-logo-card {
+        padding: 1rem;
+        min-height: 60px;
+    }
 }
